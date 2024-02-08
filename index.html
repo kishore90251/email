@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="one">
+        <div class="two">
+            <label id="email-label">EMAIL</label>
+            <input type="email" spellcheck="false" id="email-field" onkeyup="Validation()" >
+            <span id="email-error"></span>
+
+           
+        </div>
+  
+    <button class="contactUsButton" id="four" disabled="" style="background-color: white; color:black">
+        <div class="contactUsButtonInner">
+          <p class="contactUsText" style="text-align: center;" >Login</p>
+        
+        </div>
+      </button>
+   
+    </div>
+    <script>
+      var btn=document.getElementById("four");
+        var emailfield=document.getElementById("email-field");
+        var emaillabel=document.getElementById("email-label");
+        var emailerror=document.getElementById("email-error");
+function Validation(){
+    emaillabel.style.bottom="45px";
+    document.getElementById("email-field").placeholder = "Kishore@gmail.com";
+
+if(!emailfield.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+    emailerror.innerHTML="please enter a valid email";
+   
+    emailfield.style.borderBlockColor="red";
+    emailerror.style.top="120%";
+    return false;
+
+}
+emailerror.innerHTML="";
+emailfield.style.borderBlockColor="green";
+btn.style.backgroundColor="#269cdd";
+btn.style.color="white";
+emailerror.style.top="100%";
+
+return true;
+
+
+
+  
+
+}
+
+
+    </script>
+</body>
+</html>
